@@ -2,7 +2,7 @@
 ## Special Thank to AI Builders
   - https://github.com/ai-builders
 
-## Tool	
+## Tools
   - https://stable-baselines3.readthedocs.io/en/master/
   - https://github.com/DLR-RM/stable-baselines3
   - https://github.com/LucasAlegre/sumo-rl
