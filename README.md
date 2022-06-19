@@ -7,3 +7,6 @@
   - https://github.com/DLR-RM/stable-baselines3
   - https://github.com/LucasAlegre/sumo-rl
   - https://www.eclipse.org/sumo/
+
+## Medium Article
+  - https://dlink.me/ZaUpV
