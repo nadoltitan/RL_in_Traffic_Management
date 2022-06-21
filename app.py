@@ -1,4 +1,3 @@
-
 import base64
 import os
 import json
@@ -87,6 +86,12 @@ def download_button(object_to_download, download_filename, button_text, pickle_i
     return dl_link
 
 
+def file_selector(folder_path='https://github.com/nadoltitan/RL_in_Traffic_Management/'):
+    filenames = os.listdir(folder_path)
+    selected_filename = st.selectbox('Select a file', filenames)
+    return os.path.join(folder_path, selected_filename)
+
+
 if __name__ == '__main__':
     st.markdown("""
                 ## Reinforcement Learning in Traffic Management
@@ -105,6 +110,7 @@ if __name__ == '__main__':
                 It located the 'ingolstadt7' that have been unziped. 
                 You can compare which one is better The AI version or The routine
                  """)
+
     st.markdown('-'*17)
 
     st.code('''
@@ -134,7 +140,38 @@ for agent in env.agent_iter():
     action , _ = model.predict(observation)
     env.step(action)
     #print(observation,reward) ''' , language='python')
-    # Display sample data
+    
+    
+    # ---------------------
+    # Download from memory
+    # ---------------------
+    if st.checkbox('Download object from memory'):
+        st.write('~> Use if you want to save some data from memory (e.g. pd.DataFrame, dict, list, str, int)')
+
+        # Enter text for testing
+        s = st.selectbox('Select dtype', ['list',  # TODO: Add more
+                                          'str',
+                                          'int',
+                                          'float',
+                                          'dict',
+                                          'bool',
+                                          'pd.DataFrame'])
+        
+        filename = st.text_input('Enter output filename and ext (e.g. my-dataframe.csv, my-file.json, my-list.txt)', 'my-file.json')
+
+        # Pickle Rick
+        pickle_it = st.checkbox('Save as pickle file')
+
+        sample_df = pd.DataFrame({'x': list(range(10)), 'y': list(range(10))})
+        sample_dtypes = {'list': [1,'a', [2, 'c'], {'b': 2}],
+                         'str': 'Hello Streamlit!',
+                         'int': 17,
+                         'float': 17.0,
+                         'dict': {1: 'a', 'x': [2, 'c'], 2: {'b': 2}},
+                         'bool': True,
+                         'pd.DataFrame': sample_df}
+
+        # Display sample data
         st.write(f'#### Sample `{s}` to be saved to `{filename}`')
         st.code(sample_dtypes[s], language='python')
 
