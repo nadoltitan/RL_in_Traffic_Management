@@ -93,10 +93,14 @@ def file_selector(folder_path='https://github.com/nadoltitan/RL_in_Traffic_Manag
     return os.path.join(folder_path, selected_filename)
 
 
+st.markdown("""
+                ## Reinforcement Learning in Traffic Management""")
+image = Image.open('Traffic_congestion.jpg')
+st.image(image)
+
 if __name__ == '__main__':
     st.markdown("""
-                ## Reinforcement Learning in Traffic Management
-                ~> First of all, dowload the file
+                
                 [SUMO simulation](https://sumo.dlr.de/)
                 for running the model and then you need to download the file named
                 "ingolstadt7" and unzipit. Dowload other file called "Test_RL.zip"
