@@ -142,51 +142,7 @@ for agent in env.agent_iter():
     #print(observation,reward) ''' , language='python')
     
     
-    # ---------------------
-    # Download from memory
-    # ---------------------
-    if st.checkbox('Download object from memory'):
-        st.write('~> Use if you want to save some data from memory (e.g. pd.DataFrame, dict, list, str, int)')
-
-        # Enter text for testing
-        s = st.selectbox('Select dtype', ['list',  # TODO: Add more
-                                          'str',
-                                          'int',
-                                          'float',
-                                          'dict',
-                                          'bool',
-                                          'pd.DataFrame'])
-        
-        filename = st.text_input('Enter output filename and ext (e.g. my-dataframe.csv, my-file.json, my-list.txt)', 'my-file.json')
-
-        # Pickle Rick
-        pickle_it = st.checkbox('Save as pickle file')
-
-        sample_df = pd.DataFrame({'x': list(range(10)), 'y': list(range(10))})
-        sample_dtypes = {'list': [1,'a', [2, 'c'], {'b': 2}],
-                         'str': 'Hello Streamlit!',
-                         'int': 17,
-                         'float': 17.0,
-                         'dict': {1: 'a', 'x': [2, 'c'], 2: {'b': 2}},
-                         'bool': True,
-                         'pd.DataFrame': sample_df}
-
-        # Display sample data
-        st.write(f'#### Sample `{s}` to be saved to `{filename}`')
-        st.code(sample_dtypes[s], language='python')
-
-        # Download sample
-        download_button_str = download_button(sample_dtypes[s], filename, f'Click here to download {filename}', pickle_it=pickle_it)
-        st.markdown(download_button_str, unsafe_allow_html=True)
-
-        if st.checkbox('Show code example '):
-            code_text = f"""
-                        s = {sample_dtypes[s]}
-                        download_button_str = download_button(s, '{filename}', 'Click here to download {filename}', pickle_it={pickle_it})
-                        st.markdown(download_button_str, unsafe_allow_html=True)"""
-
-            st.code(code_text, language='python')
-
+    
     # --------------------------
     # Select a file to download
     # --------------------------
