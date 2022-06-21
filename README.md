@@ -10,3 +10,6 @@
 
 ## Medium Article
   - https://dlink.me/ZaUpV
+  
+## Exported App
+  - https://share.streamlit.io/nadoltitan/rl_in_traffic_management/main/app.py
