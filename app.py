@@ -134,7 +134,6 @@ for agent in env.agent_iter():
     action , _ = model.predict(observation)
     env.step(action)
     #print(observation,reward) ''' , language='python')
-
     # --------------------------
     # Select a file to download
     # --------------------------
