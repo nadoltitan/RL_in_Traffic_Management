@@ -105,6 +105,11 @@ if __name__ == '__main__':
                 You will see the SUMO RL sitmulation that have been trained 
                 You can read more about it in [This medium](https://medium.com/@nadoltitan1/%E0%B8%A5%E0%B8%94%E0%B8%9B%E0%B8%B1%E0%B8%8D%E0%B8%AB%E0%B8%B2%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%A3%E0%B8%B2%E0%B8%88%E0%B8%A3%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%82%E0%B8%B1%E0%B8%94%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2-reinforcement-learning-d3b9c6014863) 
                 and [This Github](https://github.com/nadoltitan/RL_in_Traffic_Management)
+                However, if you want to see the untrained model version which switch
+                between red light and green light every 15 second, 
+                you can run the file named "SUMO Configuration File (.sumocfg)". 
+                It located the 'ingolstadt7' that have been unziped. 
+                You can compare which one is better The AI version or The routine version.
                  """)
 
     st.markdown('-'*17)
