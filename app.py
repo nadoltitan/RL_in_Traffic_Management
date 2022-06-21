@@ -87,20 +87,10 @@ def download_button(object_to_download, download_filename, button_text, pickle_i
     return dl_link
 
 
-def file_selector(folder_path='https://github.com/nadoltitan/RL_in_Traffic_Management'):
-    filenames = os.listdir(folder_path)
-    selected_filename = st.selectbox('Select a file', filenames)
-    return os.path.join(folder_path, selected_filename)
-
-
-st.markdown("""
-                ## Reinforcement Learning in Traffic Management""")
-image = Image.open('Traffic_congestion.jpg')
-st.image(image)
-
 if __name__ == '__main__':
     st.markdown("""
-                
+                ## Reinforcement Learning in Traffic Management
+                ~> First of all, dowload the file
                 [SUMO simulation](https://sumo.dlr.de/)
                 for running the model and then you need to download the file named
                 "ingolstadt7" and unzipit. Dowload other file called "Test_RL.zip"
@@ -113,9 +103,8 @@ if __name__ == '__main__':
                 between red light and green light every 15 second, 
                 you can run the file named "SUMO Configuration File (.sumocfg)". 
                 It located the 'ingolstadt7' that have been unziped. 
-                You can compare which one is better The AI version or The routine version.
+                You can compare which one is better The AI version or The routine
                  """)
-
     st.markdown('-'*17)
 
     st.code('''
